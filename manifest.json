@@ -1,0 +1,38 @@
+{
+    "name": "YouTube Gray Mode",
+    "version": "1.0.0",
+    "description": "This is extensions turn YouTube Background to Gray",
+    "manifest_version": 2,
+    "background": {
+        "scripts": [
+            "background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "exclude_matches": [
+                "https://*. youtube.com/watch*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "bookmarks"
+    ],
+    "icons": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+    },
+    "browser_action":{
+        "default_title":"Creatd by Win, let gray!",
+        "default_popup":"popup.html"
+    }
+}
